@@ -24,13 +24,13 @@ public class ClearCommandBugFixin {
 		StaccGlobals.COUNT.set(0L);
 	}
 
-	@ModifyArg (method = "execute",
-			at = @At (value = "INVOKE", target = "Lnet/minecraft/text/Text;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/text/MutableText;"),
-			index = 1)
-	private static Object[] exec(Object[] arr) {
-		arr[0] = StaccGlobals.COUNT.get();
-		return arr;
-	}
+//	@ModifyArg (method = "execute",
+//			at = @At (value = "INVOKE", target = "Lnet/minecraft/text/Text;translatable(Ljava/lang/String;[Ljava/lang/Object;)Lnet/minecraft/text/MutableText;"),
+//			index = 1)
+//	private static Object[] exec(Object[] arr) {
+//		arr[0] = StaccGlobals.COUNT.get();
+//		return arr;
+//	}
 
 	@Mixin (Inventories.class)
 	private static class InventoriesFixin {
